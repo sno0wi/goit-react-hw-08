@@ -4,6 +4,7 @@ import {
   apiDeleteUserContact,
   apiGetUserContacts,
 } from './operations.js';
+import { apiLogoutUser } from '../auth/operations.js';
 
 const INITIAL_STATE = {
   contacts: [],
@@ -29,6 +30,9 @@ const phonebookSlice = createSlice({
         state.contacts = state.contacts.filter(
           contact => contact.id !== action.payload.id
         );
+      })
+      .addCase(apiLogoutUser.fulfilled, state => {
+        state.contacts = [];
       })
 
       .addMatcher(
