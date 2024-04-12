@@ -17,7 +17,8 @@ const ContactList = () => {
     <>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
-      {contacts !== null &&
+      {contacts &&
+        contacts !== null &&
         contacts.map(contact => <Contact key={contact.id} contact={contact} />)}
     </>
   );

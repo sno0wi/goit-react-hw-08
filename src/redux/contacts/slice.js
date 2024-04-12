@@ -7,7 +7,7 @@ import {
 import { apiLogoutUser } from '../auth/operations.js';
 
 const INITIAL_STATE = {
-  contacts: [],
+  contacts: null,
   isLoading: false,
   isError: false,
 };
