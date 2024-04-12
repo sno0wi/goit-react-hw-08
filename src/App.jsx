@@ -1,7 +1,7 @@
 import './App.css';
 import { Suspense, lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { apiGetContacts } from './redux/contactsOps.js';
+import { apiRefreshUser } from './redux/auth/operations.js';
 import { Routes, Route } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout.jsx';
@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(apiGetContacts());
+    dispatch(apiRefreshUser());
   }, [dispatch]);
 
   return (

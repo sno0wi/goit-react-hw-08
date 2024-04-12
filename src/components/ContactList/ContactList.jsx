@@ -1,22 +1,24 @@
 import Contact from '../Contact/Contact.jsx';
 import { useSelector } from 'react-redux';
-import { selectError, selectLoading } from '../../redux/contactsReducer.js';
+import {
+  selectPhonebookIsLoading,
+  selectPhonebookIsError,
+} from '../../redux/contacts/selectors.js';
 import Loader from '../Loader/Loader.jsx';
 import ErrorMessage from '../ErrorMessage/ErrorMessage.jsx';
-import { selectFilteredContacts } from '../../redux/contactsReducer.js';
+import { selectPhonebookContacts } from '../../redux/contacts/selectors.js';
 
 const ContactList = () => {
-  const contacts = useSelector(selectFilteredContacts);
-  const isLoading = useSelector(selectLoading);
-  const isError = useSelector(selectError);
+  const contacts = useSelector(selectPhonebookContacts);
+  const isLoading = useSelector(selectPhonebookIsLoading);
+  const isError = useSelector(selectPhonebookIsError);
 
   return (
     <>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
-      {contacts.map(contact => (
-        <Contact key={contact.id} contact={contact} />
-      ))}
+      {contacts !== null &&
+        contacts.map(contact => <Contact key={contact.id} contact={contact} />)}
     </>
   );
 };
