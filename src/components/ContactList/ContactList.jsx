@@ -6,10 +6,10 @@ import {
 } from '../../redux/contacts/selectors.js';
 import Loader from '../Loader/Loader.jsx';
 import ErrorMessage from '../ErrorMessage/ErrorMessage.jsx';
-import { selectPhonebookContacts } from '../../redux/contacts/selectors.js';
+import { selectFilteredContacts } from '../../redux/filters/selectors.js';
 
 const ContactList = () => {
-  const contacts = useSelector(selectPhonebookContacts);
+  const contacts = useSelector(selectFilteredContacts);
   const isLoading = useSelector(selectPhonebookIsLoading);
   const isError = useSelector(selectPhonebookIsError);
 

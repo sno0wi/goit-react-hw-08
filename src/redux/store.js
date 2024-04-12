@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { phonebookReducer } from './contacts/slice.js';
+import { filterReducer } from './filters/slice.js';
 import { authReducer } from './auth/slice.js';
 import storage from 'redux-persist/lib/storage';
 import {
@@ -23,6 +24,7 @@ export const store = configureStore({
   reducer: {
     phonebook: phonebookReducer,
     auth: persistReducer(authConfig, authReducer),
+    filters: filterReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
