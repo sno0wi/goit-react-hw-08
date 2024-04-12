@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout.jsx';
 import Loader from './components/Loader/Loader.jsx';
+import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute.jsx';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 
 const WelcomePage = lazy(() => import('./pages/WelcomePage'));
 const LoginPage = lazy(() => import('./pages/LoginPage.jsx'));
@@ -24,9 +26,30 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute>
+                <Register />
+              </RestrictedRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute>
+                <LoginPage />
+              </RestrictedRoute>
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute>
+                <Contacts />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </Suspense>
     </Layout>
