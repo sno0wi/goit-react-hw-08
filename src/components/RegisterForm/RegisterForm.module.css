@@ -49,3 +49,49 @@
     color: black;
     border-radius: 8px;
 } */
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.labelText {
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.formInput {
+    padding: 8px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.formInput:focus {
+    outline: none;
+    border: 0.5px solid black;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.errorMsg {
+    padding: 5px 15px;
+    display: block;
+    font-size: 12px;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    color: black;
+    border-radius: 8px;
+}

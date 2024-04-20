@@ -37,8 +37,6 @@ const RegisterForm = ({ onRegister }) => {
       onSubmit={handleSubmit}
     >
       <Form className={css.form}>
-        <h2 className={css.formTitle}>Register</h2>
-
         <label className={css.label}>
           <span className={css.labelText}>User name:</span>
           <Field
@@ -84,7 +82,7 @@ const RegisterForm = ({ onRegister }) => {
           title="Click to register user"
           aria-label="Add new mailbox"
         >
-          SIgn Up <IoPersonAddSharp />
+          Sign Up <IoPersonAddSharp />
         </button>
       </Form>
     </Formik>
