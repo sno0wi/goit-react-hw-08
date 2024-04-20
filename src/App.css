@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 350px;
   width: 100%;
   margin: 0 auto;
@@ -16,4 +16,11 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+} */
+
+#root {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
