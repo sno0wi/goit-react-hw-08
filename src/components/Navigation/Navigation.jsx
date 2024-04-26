@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { selectUserData } from '../../redux/auth/selectors';
 import clsx from 'clsx';
-import css from '../Layout/Layout.module.css';
+import css from '../Navigation/Navigation.module.css';
 import { apiLogoutUser } from '../../redux/auth/operations';
 
 const Navigation = () => {
@@ -26,7 +26,7 @@ const Navigation = () => {
         Contacts
       </NavLink>
       <span>Hi, {userData.name}</span>
-      <button type="button" onClick={onLogOut}>
+      <button type="button" onClick={onLogOut} className={css.onLogOutBtn}>
         Logout
       </button>
     </>
